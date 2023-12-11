@@ -3,29 +3,49 @@
 ////////////////////////////////////////////////////////////////////////
 
 class Aluno {
-  
+  Nome
+  Idade
+  Nota
+  constructor(nome, idade, nota) {
+    this.Nome = nome;
+    this.Idade = idade;
+    this.Nota = nota;
+  }
 }
 
 // Array
 
+let arrayAlunos = [];
 
 //funções projeto
 
-function CadastrarAluno() {
-  
+function CadastrarAluno(nome, idade, nota) {
+  let aluno = new Aluno(nome, idade, nota);
+
+  const usuarioExistente = arrayAlunos.find(x => x.Nome === nome);
+
+    if(usuarioExistente) {
+      console.log('erro');
+    } 
+    else {
+      arrayAlunos.push(aluno);
+      return aluno;
+    }
+
 }
+
 
 function OrdenarPorNota() {
- 
 }
+
 
 function OrdenarPorIdade() {
-
 }
+
 
 function OrdenarPorNome() {
-
 }
+
 
 function CalcularMedia(){
 
